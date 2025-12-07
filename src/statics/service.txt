@@ -1,0 +1,14 @@
+/* ----------------------------- Custom Modules ----------------------------- */
+import Service from '../../base/Service'
+import validationSchema from './validation/schema'
+import {{PascalName}}Logic from './logic/{{snakeCase}}.logic'
+/* -------------------------------------------------------------------------- */
+
+class {{PascalName}}Service extends Service {
+	async methodName(args: Record<string, any>): Promise<any> {
+		// const logic = new {{PascalName}}Logic({ args, schema: validationSchema.methodName })
+		// return this.executeStandardLogic(logic)
+	}
+}
+
+export default new {{PascalName}}Service()

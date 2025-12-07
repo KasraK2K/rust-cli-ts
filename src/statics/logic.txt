@@ -1,0 +1,31 @@
+/* ------------------------------ Dependencies ------------------------------ */
+import _ from 'lodash'
+/* ----------------------------- Custom Modules ----------------------------- */
+import Logic, { resultKeys } from '../../../base/Logic'
+/* -------------------------------------------------------------------------- */
+
+interface IArgs {
+	data: {
+	    some: string
+	}
+}
+
+class {{PascalName}}Logic extends Logic {
+	public async runLogic() {
+		this.prepareData()
+		this.fillResponse()
+	}
+
+	/* ──────────────────────────────────── - ─────────────────────────────────── */
+
+	private async generateTranslation() {
+		const { data: { some } } = this.args.data as IArgs
+		this.some = some
+	}
+
+	private fillResponse() {
+		this.resultData = { [resultKeys.OBJECT]: { list: [] } }
+	}
+}
+
+export default {{PascalName}}Logic

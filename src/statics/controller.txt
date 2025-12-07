@@ -1,0 +1,10 @@
+/* ----------------------------- Custom Modules ----------------------------- */
+import Controller from '../../base/Controller'
+import service from './{{snakeCase}}.service'
+/* -------------------------------------------------------------------------- */
+
+class {{PascalName}}Controller extends Controller {
+	// methodName = this.createHandler(service.methodName, service)
+}
+
+export default new {{PascalName}}Controller()

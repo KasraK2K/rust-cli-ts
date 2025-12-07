@@ -1,0 +1,7 @@
+declare global {
+    export interface IM{{PascalName}} {
+        some: string
+    }
+}
+
+export {}

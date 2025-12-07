@@ -1,0 +1,29 @@
+/* ----------------------------- Custom Modules ----------------------------- */
+import Repository from '../../../base/repository/Repository'
+/* -------------------------------------------------------------------------- */
+
+type IModel = IM{{PascalName}}
+
+class {{PascalName}}Repository extends Repository {
+	private tableName = '{{snakeCase}}s'
+
+	public async list(filter: IGetQueryFilter, poolData: IPoolData, options: IQueryOptions = {}): Promise<IRepoResponse<IModel[]>> {
+		const query = super.getSelectQuery(`${poolData.dbSchema}.${this.tableName}`, filter, options)
+		return super.executeQuery<IModel>(query, poolData.pool, poolData.processId)
+	}
+
+	public async upsert(data: Record<string, any>, poolData: IPoolData): Promise<IRepoResponse<IModel[]>> {
+		const query = super.getUpsertQuery(`${poolData.dbSchema}.${this.tableName}`, data, { arrayKeys: [] })
+		return super.executeQuery<IModel>(query, poolData.pool, poolData.processId)
+	}
+
+	public async archive<T>(args: IRepoArchiveArgs, poolData: IPoolData): Promise<IRepoResponse<T[]>> {
+		return super.executeArchive(`${poolData.dbSchema}.${this.tableName}`, args, poolData.pool, poolData.processId)
+	}
+
+	public async restore<T>(args: IRepoArchiveArgs, poolData: IPoolData): Promise<IRepoResponse<T[]>> {
+		return super.executeRestore(`${poolData.dbSchema}.${this.tableName}`, args, poolData.pool, poolData.processId)
+	}
+}
+
+export default new {{PascalName}}Repository()

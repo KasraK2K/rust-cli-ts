@@ -1,0 +1,10 @@
+/* ------------------------------ Dependencies ------------------------------ */
+import express from 'express'
+const router = express.Router()
+/* ----------------------------- Custom Modules ----------------------------- */
+import controller from './{{snakeCase}}.controller'
+/* -------------------------------------------------------------------------- */
+
+// router.post('/endpoint', controller.methodName)
+
+export default router

@@ -1,0 +1,7 @@
+/* ----------------------------- Custom Modules ----------------------------- */
+import * as schemaObjs from '../../../common/helpers/validator.schemas'
+/* -------------------------------------------------------------------------- */
+
+export default {
+	methodName: schemaObjs.getDataSchema({ key: { type: 'string' } }, []),
+}
