@@ -11,6 +11,8 @@ interface IArgs {
 }
 
 class {{PascalName}}Logic extends Logic {
+    private some: string
+
 	public async runLogic() {
 		this.prepareData()
 		this.fillResponse()
@@ -18,7 +20,7 @@ class {{PascalName}}Logic extends Logic {
 
 	/* ──────────────────────────────────── - ─────────────────────────────────── */
 
-	private async generateTranslation() {
+	private async prepareData() {
 		const { data: { some } } = this.args.data as IArgs
 		this.some = some
 	}

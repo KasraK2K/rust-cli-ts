@@ -1,5 +1,5 @@
 /* ----------------------------- Custom Modules ----------------------------- */
-import Repository from '../../../base/repository/Repository'
+import Repository from '../../base/repository/Repository'
 /* -------------------------------------------------------------------------- */
 
 type IModel = IM{{PascalName}}
