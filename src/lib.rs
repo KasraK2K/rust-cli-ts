@@ -79,7 +79,7 @@ pub fn get_template_files(flag: &Flag, path: Option<String>) -> Vec<TemplateFile
                 path: path.clone(),
             },
             TemplateFile {
-                file_name: format!("{name}.logic.ts"),
+                file_name: format!("logic/{name}.logic.ts"),
                 content: get_content(include_str!("statics/logic.txt"), name),
                 path: path.clone(),
             },
@@ -96,7 +96,7 @@ pub fn get_template_files(flag: &Flag, path: Option<String>) -> Vec<TemplateFile
             TemplateFile {
                 file_name: "validation/schema.ts".to_string(),
                 content: include_str!("statics/schema.txt").to_string(),
-                path: format!("{path}/validation"),
+                path: path.clone(),
             },
         ],
 
@@ -139,7 +139,7 @@ pub fn get_template_files(flag: &Flag, path: Option<String>) -> Vec<TemplateFile
         Flag::Schema => vec![TemplateFile {
             file_name: "validation/schema.ts".to_string(),
             content: include_str!("statics/schema.txt").to_string(),
-            path: format!("{path}/validation"),
+            path,
         }],
 
         _ => panic!("Unrecognized flag"),

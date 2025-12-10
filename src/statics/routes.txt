@@ -5,6 +5,6 @@ const router = express.Router()
 import controller from './{{snakeCase}}.controller'
 /* -------------------------------------------------------------------------- */
 
-// router.post('/endpoint', controller.methodName)
+router.post('/endpoint', controller.methodName)
 
 export default router
